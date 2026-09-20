@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>FluencyClip</title>
+  <link rel="stylesheet" href="overlay.css" />
+</head>
+<body>
+  <div class="window-container">
+    <header>
+      <div class="title">FluencyClip</div>
+      <div class="window-controls">
+        <button class="control-btn btn-transparency" id="toggle-transparency" title="Remover transparência" aria-label="Remover transparência">
+          <svg class="control-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <circle cx="8" cy="8" r="5.25"></circle>
+            <path class="icon-fill" d="M8 2.75a5.25 5.25 0 0 1 0 10.5z"></path>
+          </svg>
+        </button>
+        <button class="control-btn btn-min" id="minimize" title="Minimizar" aria-label="Minimizar">
+          <svg class="control-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path d="M4 8h8"></path>
+          </svg>
+        </button>
+        <button class="control-btn btn-close" id="close" title="Fechar" aria-label="Fechar">
+          <svg class="control-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path d="m5 5 6 6M11 5l-6 6"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    
+    <div id="content">
+      <div class="section">
+        <div class="label-row">
+          <span class="label">Copiado</span>
+          <span class="lang-tag" id="speak-orig" title="Ouvir original">
+            <span id="lang-src">detectando...</span> 🔊
+          </span>
+        </div>
+        <div class="text-box" id="orig">-</div>
+      </div>
+      
+      <hr>
+      
+      <div class="section">
+        <div class="label-row">
+          <span class="label" id="label-target">Tradução</span>
+          <span class="lang-tag" id="speak-trans" title="Ouvir tradução">
+            <span id="lang-target">EN</span> 🔊
+          </span>
+        </div>
+        <div class="text-box" id="trans">-</div>
+      </div>
+      
+      <div class="actions">
+        <button class="action-btn" id="copy">Copiar Tradução</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="overlay.js"></script>
+</body>
+</html>

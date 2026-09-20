@@ -1,0 +1,24 @@
+{
+  "name": "fluencyclip",
+  "version": "0.1.0",
+  "author": "Tadeu Alcoforado de Souza Leão",
+  "description": "Aplicativo Electron que traduz texto selecionado via clipboard e mostra balão de tradução.",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable"
+  },
+  "build": {
+    "appId": "com.fluencyclip.app",
+    "productName": "FluencyClip",
+    "artifactName": "FluencyClip-${version}-portatil.${ext}",
+    "win": {
+      "target": "portable"
+    }
+  },
+  "devDependencies": {
+    "electron": "^25.2.0",
+    "electron-builder": "^26.0.0"
+  },
+  "dependencies": {}
+}
