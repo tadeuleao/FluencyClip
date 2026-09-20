@@ -2,6 +2,10 @@
 
 Aplicativo portátil para Windows, desenvolvido com Electron, que monitora textos copiados para a área de transferência e exibe a tradução em uma pequena janela flutuante.
 
+## Prévia do aplicativo
+
+![Interface do FluencyClip](assets/tela_aplicativo.png)
+
 ## Como funciona
 
 1. O aplicativo verifica a área de transferência a cada segundo.
@@ -61,6 +65,7 @@ O arquivo portátil será criado na pasta `dist`. A configuração do projeto ge
 - `src/renderer/overlay.css`: concentra todos os estilos visuais e animações.
 - `src/renderer/overlay.js`: controla as interações, atualizações da tradução e síntese de voz.
 - `assets/icon.png`: ícone utilizado pela janela do aplicativo.
+- `assets/tela_aplicativo.png`: imagem de apresentação utilizada no README.
 - `package.json`: define dependências, comandos e empacotamento portátil.
 
 ## Privacidade e limitações
