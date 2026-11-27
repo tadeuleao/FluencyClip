@@ -11,6 +11,46 @@ window.addEventListener('DOMContentLoaded', () => {
   const speakTransBtn = document.getElementById('speak-trans')
   const minBtn = document.getElementById('minimize')
   const closeBtn = document.getElementById('close')
+  const modeBtn = document.getElementById('typing-mode')
+  const sourceLabel = document.getElementById('source-label')
+  let typingMode = false
+
+  function displayResult(data) {
+    transEl.textContent = data.translated
+    langSrcEl.textContent = data.detectedSource.toUpperCase()
+    const targetLang = data.target.toUpperCase()
+    langTargetEl.textContent = targetLang
+    labelTargetEl.textContent = `Tradução (${targetLang})`
+  }
+
+  modeBtn.addEventListener('click', async () => {
+    typingMode = !typingMode
+    modeBtn.disabled = true
+    try {
+      await window.electronAPI.setTypingMode(typingMode)
+    } catch (error) {
+      typingMode = false
+      transEl.textContent = 'Não foi possível ativar o monitoramento.'
+      modeBtn.disabled = false
+      return
+    }
+    modeBtn.disabled = false
+    modeBtn.setAttribute('aria-pressed', String(typingMode))
+    modeBtn.textContent = typingMode ? 'Parar tradução do campo em foco' : 'Ativar tradução do campo em foco'
+    sourceLabel.textContent = typingMode ? 'Campo em foco' : 'Copiado'
+    origEl.textContent = typingMode ? 'Aguardando campo de texto...' : '-'
+    transEl.textContent = '-'
+    langSrcEl.textContent = 'detectando...'
+  })
+
+  window.electronAPI.onFocusedText(({ text }) => {
+    if (!typingMode) return
+    origEl.textContent = text || 'Aguardando campo de texto...'
+    transEl.textContent = '-'
+    langSrcEl.textContent = 'detectando...'
+    setTimeout(() => window.electronAPI.setWindowHeight(Math.min(Math.max(containerEl.scrollHeight, 180), 600)), 100)
+  })
+  window.electronAPI.onFocusedError(message => { if (typingMode) transEl.textContent = message })
 
   if (window.electronAPI && window.electronAPI.onTranslate) {
     window.electronAPI.onTranslate((data) => {
