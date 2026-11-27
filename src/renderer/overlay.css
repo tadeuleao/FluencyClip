@@ -207,6 +207,16 @@ header {
   transition: all 0.3s ease;
 }
 
+.typing-input {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+  color: var(--text);
+  font-family: inherit;
+}
+
+.typing-input[hidden] { display: none; }
+
 #trans {
   color: var(--success);
   font-weight: 500;
