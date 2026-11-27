@@ -4,7 +4,8 @@ Aplicativo portátil para Windows, desenvolvido com Electron, que traduz textos 
 
 ## Prévia do aplicativo
 
-![Interface do FluencyClip](assets/tela_aplicativo.png)
+<img width="343" height="306" alt="image" src="https://github.com/user-attachments/assets/5d98ac47-7b67-452e-ba1e-c9efc36034fd" />
+
 
 ## Como funciona
 
