@@ -4,8 +4,7 @@ Aplicativo portátil para Windows, desenvolvido com Electron, que traduz textos 
 
 ## Prévia do aplicativo
 
-<img width="343" height="306" alt="image" src="https://github.com/user-attachments/assets/5d98ac47-7b67-452e-ba1e-c9efc36034fd" />
-
+<img width="331" height="299" alt="image" src="https://github.com/user-attachments/assets/16790232-8dcf-4775-b50a-415835c2b39d" />
 
 ## Como funciona
 
